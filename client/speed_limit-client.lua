@@ -7,17 +7,7 @@
 -- Modified by the SCRP team
 -------------------------------------------------------------------------------
 
-ESX = nil
-
 Citizen.CreateThread(function()
-
-
-	-- get ESX
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
-	end
-	
 	local resetSpeedOnEnter = true
 	local isEnabled = false
 	while true do
@@ -36,7 +26,7 @@ Citizen.CreateThread(function()
 			-- Disable speed limiter
 			if IsControlJustReleased(0,246) and IsControlPressed(0,131) then
 				if isEnabled then -- fix spam
-					ESX.ShowNotification("Hastighetsbegränsare inaktiverad")
+					showHelpNotification("Hastighetsbegränsare inaktiverad")
 					maxSpeed = GetVehicleHandlingFloat(vehicle,"CHandlingData","fInitialDriveMaxFlatVel")
 					SetEntityMaxSpeed(vehicle, maxSpeed)
 					isEnabled = false
@@ -47,7 +37,7 @@ Citizen.CreateThread(function()
 					cruise = GetEntitySpeed(vehicle)
 					SetEntityMaxSpeed(vehicle, cruise)
 					cruise = math.floor(cruise * 3.6 + 0.5)
-					ESX.ShowNotification("Hastighetsbegränsare inställd på "..cruise.." km/h, tryck ~INPUT_VEH_SUB_ASCEND~ + ~INPUT_MP_TEXT_CHAT_TEAM~ för att inaktivera.")
+					showHelpNotification("Hastighetsbegränsare inställd på "..cruise.." km/h, tryck ~INPUT_VEH_SUB_ASCEND~  ~INPUT_MP_TEXT_CHAT_TEAM~ för att inaktivera.")
 					isEnabled = true
 				end
 			end
@@ -56,3 +46,9 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+function showHelpNotification(text)
+	BeginTextCommandDisplayHelp("STRING")
+	AddTextComponentSubstringPlayerName(text)
+	EndTextCommandDisplayHelp(0, 0, 1, -1)
+end 
