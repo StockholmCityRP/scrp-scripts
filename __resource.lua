@@ -27,5 +27,6 @@ client_scripts {
 	"client/speed_limit-client.lua",
 	"client/NoDriveBy-client.lua",
 	"client/idhead_client.lua",
-	"server/afkkick-client.lua"
+	"client/afkkick-client.lua",
+	"client/handsup-client.lua"
 }
