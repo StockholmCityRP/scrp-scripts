@@ -16,7 +16,6 @@ server_scripts {
 
 -- client scripts
 client_scripts {
-	"client/handsup-client.lua",
 	"client/fixtraffic-client.lua",
 	"client/NoDrivingCopCar-client.lua",
 	"client/NoNPCDrop-client.lua",
