@@ -9,7 +9,8 @@ version '1.0.0'
 -- server scripts
 server_scripts {
 	"server/deletepoliceweapons-server.lua",
-	"server/deletevehicle-server.lua"
+	"server/deletevehicle-server.lua",
+	"server/ooc-server.lua"
 }
 
 -- client scripts
