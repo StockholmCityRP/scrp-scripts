@@ -1,5 +1,5 @@
 TriggerEvent('es:addGroupCommand', 'dv2', 'user', function(source, args, user)
-  TriggerClientEvent('wk:deleteVehicle', source)
+  TriggerClientEvent('dv:deleteVehicle', source)
 end, function(source, args, user)
   --TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
 end, {help = "Deletes the vehicle"})
