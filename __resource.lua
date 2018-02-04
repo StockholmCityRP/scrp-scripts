@@ -11,7 +11,8 @@ server_scripts {
 	"@mysql-async/lib/MySQL.lua",
 	"server/deletepoliceweapons-server.lua",
 	"server/deletevehicle-server.lua",
-	"server/ooc-server.lua"
+	"server/ooc-server.lua",
+	"server/afkkick-server.lua"
 }
 
 -- client scripts
@@ -24,5 +25,6 @@ client_scripts {
 	"client/deletevehicle-client.lua",
 	"client/speed_limit-client.lua",
 	"client/NoDriveBy-client.lua",
-	"client/idhead_client.lua"
+	"client/idhead_client.lua",
+	"server/afkkick-client.lua"
 }
