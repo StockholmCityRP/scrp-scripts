@@ -23,5 +23,5 @@ client_scripts {
 	"client/deletevehicle-client.lua",
 	"client/speed_limit-client.lua",
 	"client/NoDriveBy-client.lua",
-	"client/set_cords-client.lua"
+	"client/idhead_client.lua"
 }

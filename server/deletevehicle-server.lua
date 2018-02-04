@@ -1,15 +1,5 @@
--- Add an event handler for the 'chatMessage' event
-AddEventHandler( 'chatMessage', function( source, n, msg )  
-
-    msg = string.lower( msg )
-    
-    -- Check to see if a client typed in /dv
-    if ( msg == "/dv2" ) then 
-    
-        -- Cancel the chat message event (stop the server from posting the message)
-        CancelEvent() 
-
-        -- Trigger the client event 
-        TriggerClientEvent( 'wk:deleteVehicle', source )
-    end
-end )
+TriggerEvent('es:addGroupCommand', 'dv2', 'user', function(source, args, user)
+  TriggerClientEvent('wk:deleteVehicle', source)
+end, function(source, args, user)
+  --TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+end, {help = "Deletes the vehicle"})

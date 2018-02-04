@@ -1,13 +1,13 @@
 -- Register a network event 
-RegisterNetEvent( 'wk:deleteVehicle' )
+RegisterNetEvent('dv:deleteVehicle')
 
 -- The distance to check in front of the player for a vehicle
 -- Distance is in GTA units, which are quite big  
 local distanceToCheck = 5.0
 
 -- Add an event handler for the deleteVehicle event. 
--- Gets called when a user types in /dv in chat (see server.lua)
-AddEventHandler( 'wk:deleteVehicle', function()
+-- Gets called when a user types in /dv2 in chat (see server.lua)
+AddEventHandler('dv:deleteVehicle', function()
     local ped = GetPlayerPed( -1 )
 
     if ( DoesEntityExist( ped ) and not IsEntityDead( ped ) ) then 
