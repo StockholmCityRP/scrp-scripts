@@ -8,6 +8,7 @@
 
 Citizen.CreateThread(function()
 	local resetSpeedOnEnter = true
+	local isEnabled = false
 	while true do
 		Citizen.Wait(0)
 		local playerPed = GetPlayerPed(-1)
@@ -19,14 +20,19 @@ Citizen.CreateThread(function()
 				maxSpeed = GetVehicleHandlingFloat(vehicle,"CHandlingData","fInitialDriveMaxFlatVel")
 				SetEntityMaxSpeed(vehicle, maxSpeed)
 				resetSpeedOnEnter = false
+				isEnabled = false
 			end
 			-- Disable speed limiter
 			if IsControlJustReleased(0,246) and IsControlPressed(0,131) then
-				maxSpeed = GetVehicleHandlingFloat(vehicle,"CHandlingData","fInitialDriveMaxFlatVel")
-				SetEntityMaxSpeed(vehicle, maxSpeed)
-				showHelpNotification("Hastighetsbegränsare inaktiverad")
+				if isEnabled then
+					showHelpNotification("Hastighetsbegränsare inaktiverad")
+					maxSpeed = GetVehicleHandlingFloat(vehicle,"CHandlingData","fInitialDriveMaxFlatVel")
+					SetEntityMaxSpeed(vehicle, maxSpeed)
+					isEnabled = false
+				end
 			-- Enable speed limiter
 			elseif IsControlJustReleased(0,246) then
+				isEnabled = true
 				cruise = GetEntitySpeed(vehicle)
 				SetEntityMaxSpeed(vehicle, cruise)
 				cruise = math.floor(cruise * 3.6 + 0.5)
