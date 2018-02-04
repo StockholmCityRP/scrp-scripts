@@ -8,6 +8,7 @@ version '1.0.0'
 
 -- server scripts
 server_scripts {
+	"@mysql-async/lib/MySQL.lua",
 	"server/deletepoliceweapons-server.lua",
 	"server/deletevehicle-server.lua",
 	"server/ooc-server.lua"
