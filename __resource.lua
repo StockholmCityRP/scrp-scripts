@@ -12,7 +12,8 @@ server_scripts {
 	"server/deletepoliceweapons-server.lua",
 	"server/deletevehicle-server.lua",
 	"server/ooc-server.lua",
-	"server/afkkick-server.lua"
+	"server/afkkick-server.lua",
+	"server/discordbot_server.lua"
 }
 
 -- client scripts
