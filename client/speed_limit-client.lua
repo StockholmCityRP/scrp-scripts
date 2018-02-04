@@ -5,7 +5,6 @@
 --              INPUT_MP_TEXT_CHAT_TEAM is pressed. To disable, press
 --              INPUT_VEH_SUB_ASCEND + INPUT_MP_TEXT_CHAT_TEAM
 -------------------------------------------------------------------------------
-local useMph = false -- if false, it will display speed in kph
 
 Citizen.CreateThread(function()
   local resetSpeedOnEnter = true
@@ -30,12 +29,8 @@ Citizen.CreateThread(function()
       elseif IsControlJustReleased(0,246) then
         cruise = GetEntitySpeed(vehicle)
         SetEntityMaxSpeed(vehicle, cruise)
-        if useMph then
-          cruise = math.floor(cruise * 2.23694 + 0.5)
-          showHelpNotification("Hastighetsbegränsare inställd på "..cruise.." mph. ~INPUT_VEH_SUB_ASCEND~ + ~INPUT_MP_TEXT_CHAT_TEAM~ för att inaktivera.")
-        else
           cruise = math.floor(cruise * 3.6 + 0.5)
-          showHelpNotification("Hastighetsbegränsare inställd på "..cruise.." km/h. ~INPUT_VEH_SUB_ASCEND~ + ~INPUT_MP_TEXT_CHAT_TEAM~ för att inaktivera")
+          showHelpNotification("Hastighetsbegränsare inställd på "..cruise.." km/h, tryck ~INPUT_VEH_SUB_ASCEND~ + ~INPUT_MP_TEXT_CHAT_TEAM~ för att inaktivera.")
         end
       end
     else
