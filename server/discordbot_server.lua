@@ -1,3 +1,6 @@
 AddEventHandler('es:chatMessage', function(source, command_args, user)
+	print(source)
+	print(command_args)
+	print(user)
 	PerformHttpRequest(GetConvar("chat_webhook", "none"), function(err, text, headers) end, 'POST', json.encode({username = user, content = source}), { ['Content-Type'] = 'application/json' })
 end)
