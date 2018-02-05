@@ -35,7 +35,7 @@ Citizen.CreateThread(function()
 				isEnabled = false
 			end
 			-- Disable speed limiter
-			if IsControlJustReleased(0,Keys['C']) and IsControlPressed(0,Keys['LEFTSHIFT']) and GetLastInputMethod(2) then
+			if IsControlJustReleased(0,Keys['B']) and IsControlPressed(0,Keys['LEFTSHIFT']) and GetLastInputMethod(2) then
 				if isEnabled then -- fix spam
 					showHelpNotification("Hastighetsbegränsare ~y~inaktiverad~w~")
 					maxSpeed = GetVehicleHandlingFloat(vehicle,"CHandlingData","fInitialDriveMaxFlatVel")
@@ -43,7 +43,7 @@ Citizen.CreateThread(function()
 					isEnabled = false
 				end
 			-- Enable speed limiter
-			elseif IsControlJustReleased(0, Keys['C']) and GetLastInputMethod(2) then
+			elseif IsControlJustReleased(0, Keys['B']) and GetLastInputMethod(2) then
 				if not isEnabled then -- fix spam
 					cruise = GetEntitySpeed(vehicle)
 					SetEntityMaxSpeed(vehicle, cruise)
