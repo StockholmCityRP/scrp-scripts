@@ -28,6 +28,5 @@ client_scripts {
 	"client/NoDriveBy-client.lua",
 	"client/idhead_client.lua",
 	"client/afkkick-client.lua",
-	"client/handsup-client.lua",
-	"client/NoNPCAggressive-client.lua"
+	"client/handsup-client.lua"
 }
