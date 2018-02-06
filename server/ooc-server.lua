@@ -37,6 +37,10 @@ AddEventHandler('chatMessage', function(source, name, msg)
 		CancelEvent()
 		TriggerClientEvent('chatMessage', -1, "Me | " .. fullName, { 255, 0, 0 }, string.sub(msg,5))
 	end
+	if sm[1] == "/news" then
+		CancelEvent()
+                TriggerClientEvent('chatMessage', -1, "News | " .. fullName, { 255, 0, 0 }, string.sub(msg,5))
+	end
 end)
 
 function stringsplit(inputstr, sep)
