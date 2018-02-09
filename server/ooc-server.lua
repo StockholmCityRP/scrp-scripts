@@ -39,7 +39,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
 	end
 	if sm[1] == "/news" then
 		CancelEvent()
-                TriggerClientEvent('chatMessage', -1, "News | " .. fullName, { 255, 0, 0 }, string.sub(msg,5))
+		TriggerClientEvent('chatMessage', -1, "News | " .. fullName, { 255, 0, 0 }, string.sub(msg,5))
 	end
 end)
 
