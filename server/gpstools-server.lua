@@ -9,9 +9,15 @@ end, function(source, args, user)
 end, {help = "Sets the GPS to the specefied coords", params = {{name = "x", help = "X coords"}, {name = "y", help = "Y coords"}}})
 
 TriggerEvent('es:addGroupCommand', 'getpos', 'user', function(source, args, user)
-	TriggerClientEvent("gpstools:getpos", source, args)
+	TriggerClientEvent("gpstools:getpos", source)
 
 end, function(source, args, user)
 	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
-end, {help = "Gets the player's current position", params = { name = "id", help = "player id" }})
+end, {help = "Gets the player's current position"})
 
+TriggerEvent('es:addGroupCommand', 'myid', 'user', function(source, args, user)
+	TriggerClientEvent("gpstools:getid", source)
+
+end, function(source, args, user)
+	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+end, {help = "Returns the player's current id"})
