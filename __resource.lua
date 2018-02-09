@@ -13,7 +13,8 @@ server_scripts {
 	"server/deletevehicle-server.lua",
 	"server/ooc-server.lua",
 	"server/afkkick-server.lua",
-	"server/discordbot_server.lua"
+	"server/discordbot_server.lua",
+	"server/gpstools-server.lua"
 }
 
 -- client scripts
@@ -28,5 +29,6 @@ client_scripts {
 	"client/NoDriveBy-client.lua",
 	"client/idhead_client.lua",
 	"client/afkkick-client.lua",
-	"client/handsup-client.lua"
+	"client/handsup-client.lua",
+	"client/gpstools-client.lua"
 }
