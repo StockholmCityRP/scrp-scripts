@@ -1,4 +1,4 @@
-TriggerEvent('es:addGroupCommand', 'tp', 'user', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'setgps', 'user', function(source, args, user)
 
   TriggerClientEvent("gpstools:setgps", source, {
     x = tonumber(args[1]),
