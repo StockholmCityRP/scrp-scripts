@@ -1,3 +1,5 @@
+local isMinimapEnabled = false
+
 RegisterNetEvent('gpstools:setgps')
 AddEventHandler('gpstools:setgps', function(pos)
 
@@ -17,7 +19,18 @@ end)
 
 RegisterNetEvent('gpstools:getid')
 AddEventHandler('gpstools:getid', function()
-	showHelpNotification("Your id is: " .. PlayerId())
+	showHelpNotification("Your id is: todo")
+end)
+
+RegisterNetEvent('gpstools:togglegps')
+AddEventHandler('gpstools:togglegps', function()
+	if not isMinimapEnabled then
+		SetRadarBigmapEnabled(true, false)
+		isMinimapEnabled = true
+	else
+		SetRadarBigmapEnabled(false, false)
+		isMinimapEnabled = false
+	end
 end)
 
 function showHelpNotification(text)

@@ -21,3 +21,10 @@ TriggerEvent('es:addGroupCommand', 'myid', 'user', function(source, args, user)
 end, function(source, args, user)
 	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
 end, {help = "Returns the player's current id"})
+
+TriggerEvent('es:addGroupCommand', 'togglegps', 'user', function(source, args, user)
+	TriggerClientEvent("gpstools:togglegps", source)
+
+end, function(source, args, user)
+	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
+end, {help = "Toggle the big gps"})
