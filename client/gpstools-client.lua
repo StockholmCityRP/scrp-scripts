@@ -8,6 +8,14 @@ AddEventHandler('gpstools:setgps', function(pos)
 	showHelpNotification("The coords have been added to your GPS!")
 end)
 
+RegisterNetEvent('gpstools:getpos')
+AddEventHandler('gpstools:getpos', function()
+
+	local pos = GetEntityCoords(GetPlayerPed(-1))
+	local formattedText = "x: " .. pos.x .. ", y: " .. pos.y .. ", z: " .. pos.z
+	showHelpNotification(formattedText)
+end)
+
 function showHelpNotification(text)
 	BeginTextCommandDisplayHelp("STRING")
 	AddTextComponentSubstringPlayerName(text)
