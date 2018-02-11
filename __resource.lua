@@ -18,7 +18,8 @@ server_scripts {
 	"server/ooc-server.lua",
 	"server/afkkick-server.lua",
 	"server/discordbot_server.lua",
-	"server/gpstools-server.lua"
+	"server/gpstools-server.lua",
+	"server/commands-server.lua"
 }
 
 -- client scripts
@@ -37,5 +38,6 @@ client_scripts {
 	"client/idhead_client.lua",
 	"client/afkkick-client.lua",
 	"client/handsup-client.lua",
-	"client/gpstools-client.lua"
+	"client/gpstools-client.lua",
+	"client/commands-client.lua"
 }
