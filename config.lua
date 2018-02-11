@@ -1,2 +1,1 @@
-Config        = {}
 Config.Locale = 'sv'
