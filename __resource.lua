@@ -9,6 +9,9 @@ version '1.0.0'
 -- server scripts
 server_scripts {
 	"@mysql-async/lib/MySQL.lua",
+	"@es_extended/locale.lua",
+	"locates/en.lua",
+	"locates/sv.lua",
 	"server/deletepoliceweapons-server.lua",
 	"server/deletevehicle-server.lua",
 	"server/ooc-server.lua",
@@ -19,8 +22,10 @@ server_scripts {
 
 -- client scripts
 client_scripts {
+	"@es_extended/locale.lua",
+	"locates/en.lua",
+	"locates/sv.lua",
 	"client/fixtraffic-client.lua",
-	"client/NoDrivingCopCar-client.lua",
 	"client/NoNPCDrop-client.lua",
 	"client/deletepoliceweapons-client.lua",
 	"client/pointfinger-client.lua",

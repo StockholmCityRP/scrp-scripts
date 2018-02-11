@@ -15,19 +15,13 @@ AddEventHandler('dv:deleteVehicle', function()
 
         if ( IsPedSittingInAnyVehicle( ped ) ) then 
             local vehicle = GetVehiclePedIsIn( ped, false )
-
-            if ( GetPedInVehicleSeat( vehicle, -1 ) == ped ) then 
-                SetEntityAsMissionEntity( vehicle, true, true )
-                deleteCar( vehicle )
-
-                if ( DoesEntityExist( vehicle ) ) then 
-                	ShowNotification( "~r~Unable to delete vehicle, try again." )
-                else 
-                	ShowNotification( "Vehicle deleted." )
-                end 
-            else 
-                ShowNotification( "You must be in the driver's seat!" )
-            end 
+			SetEntityAsMissionEntity( vehicle, true, true )
+			deleteCar( vehicle )
+			if ( DoesEntityExist(vehicle)) then 
+				ShowNotification("~r~Unable to delete vehicle, try again.")
+			else
+				ShowNotification("Vehicle deleted.")
+			end
         else
             local playerPos = GetEntityCoords( ped, 1 )
             local inFrontOfPlayer = GetOffsetFromEntityInWorldCoords( ped, 0.0, distanceToCheck, 0.0 )

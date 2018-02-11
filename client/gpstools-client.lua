@@ -7,7 +7,7 @@ AddEventHandler('gpstools:setgps', function(pos)
 	pos.y = pos.y + 0.0
 
 	SetNewWaypoint(pos.x, pos.y)
-	showHelpNotification("The coords have been added to your GPS!")
+	showHelpNotification(_U('gpstools_setgps_ok'))
 end)
 
 RegisterNetEvent('gpstools:getpos')
@@ -19,7 +19,7 @@ end)
 
 RegisterNetEvent('gpstools:getid')
 AddEventHandler('gpstools:getid', function()
-	showHelpNotification("Your id is: todo")
+	showHelpNotification(_U('gpstools_getid') .. " ~y~todo~w~")
 end)
 
 RegisterNetEvent('gpstools:togglegps')
@@ -40,6 +40,8 @@ AddEventHandler('gpstools:tpwaypoint', function()
 	if DoesBlipExist(WaypointHandle) then
 		local coord = Citizen.InvokeNative(0xFA7C7F0AADF25D09, WaypointHandle, Citizen.ResultAsVector())
 		SetEntityCoords(playerPed, coord.x, coord.y, coord.z)
+	else
+		showHelpNotification(_U('gpstools_tp_no_waypoint'))
 	end
 end)
 

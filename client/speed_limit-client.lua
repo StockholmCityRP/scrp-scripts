@@ -1,9 +1,7 @@
 -------------------------------------------------------------------------------
 -- Title: Speed limiter.
 -- Author: Serpico -- twitch.tv/SerpicoTV
--- Description: This script will restict the speed of the vehicle when
---              INPUT_MP_TEXT_CHAT_TEAM is pressed. To disable, press
---              INPUT_VEH_SUB_ASCEND + INPUT_MP_TEXT_CHAT_TEAM
+-- Description: This script will restict the speed of the vehicle when B is is pressed (toggle)
 -- Modified by the SCRP team
 -------------------------------------------------------------------------------
 local Keys = {
@@ -39,10 +37,10 @@ Citizen.CreateThread(function()
 					cruise = GetEntitySpeed(vehicle)
 					SetEntityMaxSpeed(vehicle, cruise)
 					cruise = math.floor(cruise * 3.6 + 0.5)
-					showHelpNotification("Hastighetsbegränsare inställd på ~b~"..cruise.."~w~ km/h")
+					showHelpNotification(_U('speedlimiter_set') .. " ~b~"..cruise.."~w~ km/h")
 					enabled = true
 				else
-					showHelpNotification("Hastighetsbegränsare ~y~inaktiverad~w~")
+					showHelpNotification(_U('speedlimiter_disabled'))
 					maxSpeed = GetVehicleHandlingFloat(vehicle,"CHandlingData","fInitialDriveMaxFlatVel")
 					SetEntityMaxSpeed(vehicle, maxSpeed)
 					enabled = false
