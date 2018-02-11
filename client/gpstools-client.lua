@@ -18,8 +18,8 @@ AddEventHandler('gpstools:getpos', function()
 end)
 
 RegisterNetEvent('gpstools:getid')
-AddEventHandler('gpstools:getid', function()
-	showHelpNotification(_U('gpstools_getid') .. " ~y~todo~w~")
+AddEventHandler('gpstools:getid', function(source)
+	showHelpNotification(_U('gpstools_getid') .. " ~y~" .. GetPlayerServerId(source))
 end)
 
 RegisterNetEvent('gpstools:togglegps')

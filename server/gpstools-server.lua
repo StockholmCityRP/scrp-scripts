@@ -15,7 +15,7 @@ end, function(source, args, user)
 	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
 end, {help = "Gets the player's current position"})
 
-TriggerEvent('es:addGroupCommand', 'myid', 'user', function(source, args, user)
+TriggerEvent('es:addGroupCommand', 'id', 'user', function(source, args, user)
 	TriggerClientEvent("gpstools:getid", source)
 
 end, function(source, args, user)

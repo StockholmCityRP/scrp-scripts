@@ -6,7 +6,7 @@ Locales['sv'] = {
 	
 	-- gps tools
 	['gpstools_setgps_ok'] = 'Koordinaterna har blivit placerad i din GPS!',
-	['gpstools_getid'] = 'Ditt id är: ',
+	['gpstools_getid'] = 'Ditt id är',
 	['gpstools_tp_no_waypoint'] = 'Du har inte lagt en waypoint!',
 
 	-- speed limiter

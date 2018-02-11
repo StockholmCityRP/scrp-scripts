@@ -6,7 +6,7 @@ Locales['en'] = {
 	
 	-- gps tools
 	['gpstools_setgps_ok'] = 'The coords have been added to your GPS!',
-	['gpstools_getid'] = 'Your id is: ',
+	['gpstools_getid'] = 'Your ID is',
 	['gpstools_tp_no_waypoint'] = 'You do not have a waypoint set!',
 	
 	-- speed limiter
