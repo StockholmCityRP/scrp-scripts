@@ -1,4 +1,7 @@
+ESX                    = nil
 local isMinimapEnabled = false
+
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 RegisterNetEvent('gpstools:setgps')
 AddEventHandler('gpstools:setgps', function(pos)

@@ -1,12 +1,15 @@
 -- CONFIG --
 
 -- AFK Kick Time Limit (in seconds)
-secondsUntilKick = 600
+secondsUntilKick = 1200 -- 20 min
 
 -- Warn players if 3/4 of the Time Limit ran up
 kickWarning = true
 
 -- CODE --
+
+ESX = nil
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 Citizen.CreateThread(function()
 	while true do
