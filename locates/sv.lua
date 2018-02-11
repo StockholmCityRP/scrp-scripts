@@ -10,6 +10,6 @@ Locales['sv'] = {
 	['gpstools_tp_no_waypoint'] = 'Du har inte lagt en waypoint!',
 
 	-- speed limiter
-	['speedlimiter_set'] = 'Hastighetsbegränsare inställd på ',
+	['speedlimiter_set'] = 'Hastighetsbegränsare inställd på',
 	['speedlimiter_disabled'] = 'Hastighetsbegränsare ~y~inaktiverad~w~',
 }

@@ -10,6 +10,6 @@ Locales['en'] = {
 	['gpstools_tp_no_waypoint'] = 'You do not have a waypoint set!',
 	
 	-- speed limiter
-	['speedlimiter_set'] = 'Speed limiter set to ',
+	['speedlimiter_set'] = 'Speed limiter set to',
 	['speedlimiter_disabled'] = 'The speed limiter has been ~y~disabled~w~',
 }

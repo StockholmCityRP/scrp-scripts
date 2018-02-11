@@ -1,1 +1,2 @@
+Config        = {}
 Config.Locale = 'sv'
