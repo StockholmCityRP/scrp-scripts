@@ -1,8 +1,8 @@
 Locales['en'] = {
 	-- afk script
 	['afk_kicked_message'] = 'You have been kicked for being AFK',
-	['afk_warning_1'] = '~r~You\'ll be kicked in ',
-	['afk_warning_2'] = '~r~ seconds for being inactive!',
+	['afk_warning_1'] = 'You\'ll be kicked in ',
+	['afk_warning_2'] = ' seconds for being inactive!',
 	
 	-- gps tools
 	['gpstools_setgps_ok'] = 'The coords have been added to your GPS!',
