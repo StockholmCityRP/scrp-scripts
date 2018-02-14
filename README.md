@@ -1,6 +1,5 @@
 # fivem-scripts
-
-We do not own any of the scripts
+Disclaimer: we have not developed all of the scripts in this project.
 
 ## Requirements
 - ES
