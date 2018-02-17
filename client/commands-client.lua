@@ -1,15 +1,16 @@
-RegisterNetEvent('commands:getname')
-AddEventHandler('commands:getname', function(playerName)
-	showHelpNotification(playerName)
+Citizen.CreateThread(function()
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(50)
+	end
+end)
+
+RegisterNetEvent('commands:lookup')
+AddEventHandler('commands:lookup', function(playerName)
+	ESX.ShowNotification(playerName)
 end)
 
 RegisterNetEvent('commands:getid')
 AddEventHandler('commands:getid', function(source)
-	showHelpNotification(_U('gpstools_getid') .. " ~y~" .. GetPlayerServerId(source))
+	ESX.ShowNotification(_U('commands_getid') .. " ~y~" .. GetPlayerServerId(source))
 end)
-
-function showHelpNotification(text)
-	BeginTextCommandDisplayHelp("STRING")
-	AddTextComponentSubstringPlayerName(text)
-	EndTextCommandDisplayHelp(0, 0, 1, -1)
-end
