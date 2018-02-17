@@ -2,10 +2,6 @@ local isMinimapEnabled = false
 
 RegisterNetEvent('gpstools:setgps')
 AddEventHandler('gpstools:setgps', function(pos)
-
-	pos.x = pos.x + 0.0
-	pos.y = pos.y + 0.0
-
 	SetNewWaypoint(pos.x, pos.y)
 	showHelpNotification(_U('gpstools_setgps_ok'))
 end)
@@ -15,11 +11,6 @@ AddEventHandler('gpstools:getpos', function()
 	local pos = GetEntityCoords(GetPlayerPed(-1))
 	local formattedText = "x: " .. pos.x .. ", y: " .. pos.y .. ", z: " .. pos.z
 	TriggerEvent('chatMessage', 'SYSTEM', { 0, 0, 0 }, formattedText)
-end)
-
-RegisterNetEvent('gpstools:getid')
-AddEventHandler('gpstools:getid', function(source)
-	showHelpNotification(_U('gpstools_getid') .. " ~y~" .. GetPlayerServerId(source))
 end)
 
 RegisterNetEvent('gpstools:togglegps')
