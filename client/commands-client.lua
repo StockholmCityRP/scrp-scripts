@@ -1,6 +1,6 @@
 RegisterNetEvent('commands:getname')
-AddEventHandler('commands:getname', function(target)
-	showHelpNotification(GetPlayerName(target))
+AddEventHandler('commands:getname', function(playerName)
+	showHelpNotification(playerName)
 end)
 
 function showHelpNotification(text)

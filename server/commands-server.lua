@@ -1,5 +1,9 @@
 TriggerEvent('es:addGroupCommand', 'getname', 'user', function(source, args, user)
-	TriggerClientEvent("commands:getname", source, tonumber(args[1]))
+	if args[1] and GetPlayerName(tonumber(args[1]))then
+		TriggerClientEvent("commands:getname", source, GetPlayerName(tonumber(args[1])))
+	else
+		TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Incorrect player ID!")
+	end
 end, function(source, args, user)
 	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
-end, {help = "Get the player name from server ID", params = {{name = "ID", help = "server id"}}})
+end, {help = "Get someones name from their server ID", params = {{name = "id", help = "player id"}}})
