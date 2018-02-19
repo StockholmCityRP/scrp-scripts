@@ -9,11 +9,6 @@ function getIdentity(source)
 	end
 end
 
-TriggerClientEvent('chat:addSuggestion', -1, '/ooc', 'Type an out of character message', {{name='message', help="the message"}})
-TriggerClientEvent('chat:addSuggestion', -1, '/twt', 'Send a tweet', {{name='message', help="the message"}})
-TriggerClientEvent('chat:addSuggestion', -1, '/me', 'Personal action', {{name='message', help="the message"}})
-TriggerClientEvent('chat:addSuggestion', -1, '/news', 'Announce news (do not abuse)', {{name='message', help="the message"}})
-
 AddEventHandler('chatMessage', function(source, name, msg)
 	sm = stringsplit(msg, " ");
 	local name = getIdentity(source)

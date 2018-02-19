@@ -1,0 +1,6 @@
+AddEventHandler('playerSpawned', function(spawn)
+	TriggerEvent('chat:addSuggestion', '/ooc', 'Type an out of character message', {{name='message', help="the message"}})
+	TriggerEvent('chat:addSuggestion', '/twt', 'Send a tweet', {{name='message', help="the message"}})
+	TriggerEvent('chat:addSuggestion', '/me', 'Personal action', {{name='message', help="the message"}})
+	TriggerEvent('chat:addSuggestion', '/news', 'Announce news (do not abuse)', {{name='message', help="the message"}})
+end)

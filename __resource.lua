@@ -39,5 +39,6 @@ client_scripts {
 	"client/afkkick-client.lua",
 	"client/handsup-client.lua",
 	"client/gpstools-client.lua",
-	"client/commands-client.lua"
+	"client/commands-client.lua",
+	"client/ooc-client.lua"
 }
