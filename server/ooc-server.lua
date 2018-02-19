@@ -3,43 +3,35 @@ function getIdentity(source)
 	local result = MySQL.Sync.fetchAll("SELECT * FROM users WHERE identifier = @identifier", {['@identifier'] = identifier})
 	if result[1] ~= nil then
 		local identity = result[1]
-
-		return {
-			identifier = identity['identifier'],
-			firstname = identity['firstname'],
-			lastname = identity['lastname'],
-			dateofbirth = identity['dateofbirth'],
-			sex = identity['sex'],
-			height = identity['height']
-		}
+		return identity['firstname'] .. ' ' .. identity['lastname']
 	else
-		return nil
+		return 'Unknown'
 	end
 end
+
+TriggerClientEvent('chat:addSuggestion', -1, '/ooc', 'Type an out of character message', {{name='message', help="the message"}})
+TriggerClientEvent('chat:addSuggestion', -1, '/twt', 'Send a tweet', {{name='message', help="the message"}})
+TriggerClientEvent('chat:addSuggestion', -1, '/me', 'Personal action', {{name='message', help="the message"}})
+TriggerClientEvent('chat:addSuggestion', -1, '/news', 'Announce news (do not abuse)', {{name='message', help="the message"}})
 
 AddEventHandler('chatMessage', function(source, name, msg)
 	sm = stringsplit(msg, " ");
 	local name = getIdentity(source)
-	local fullName = name.firstname .. " " .. name.lastname
 	if sm[1] == "/ooc" then
 		CancelEvent()
-		TriggerClientEvent('chatMessage', -1, "OOC | " .. fullName, { 128, 128, 128 }, string.sub(msg,5))
-	end
-	if sm[1] == "//" then
-		CancelEvent()
-		TriggerClientEvent('chatMessage', -1, "OOC | " .. fullName, { 128, 128, 128 }, string.sub(msg,5))
+		TriggerClientEvent('chatMessage', -1, "OOC | " .. name, { 128, 128, 128 }, string.sub(msg,5))
 	end
 	if sm[1] == "/twt" then
 		CancelEvent()
-		TriggerClientEvent('chatMessage', -1, "^0[^4Twitter^0] (^5@" .. fullName .. "^0)", { 0, 153, 204 }, string.sub(msg,5))
+		TriggerClientEvent('chatMessage', -1, "^0[^4Twitter^0] (^5@" .. name .. "^0)", { 0, 153, 204 }, string.sub(msg,5))
 	end
 	if sm[1] == "/me" then
 		CancelEvent()
-		TriggerClientEvent('chatMessage', -1, "Me | " .. fullName, { 255, 0, 0 }, string.sub(msg,5))
+		TriggerClientEvent('chatMessage', -1, "Me | " .. name, { 255, 0, 0 }, string.sub(msg,5))
 	end
 	if sm[1] == "/news" then
 		CancelEvent()
-		TriggerClientEvent('chatMessage', -1, "News | " .. fullName, { 255, 0, 0 }, string.sub(msg,5))
+		TriggerClientEvent('chatMessage', -1, "News | " .. name, { 255, 0, 0 }, string.sub(msg,5))
 	end
 end)
 
