@@ -1,4 +1,4 @@
-AddEventHandler('playerSpawned', function(spawn)
+Citizen.CreateThread(function()
 	TriggerEvent('chat:addSuggestion', '/ooc', 'Type an out of character message', {{name='message', help="the message"}})
 	TriggerEvent('chat:addSuggestion', '/twt', 'Send a tweet', {{name='message', help="the message"}})
 	TriggerEvent('chat:addSuggestion', '/me', 'Personal action', {{name='message', help="the message"}})
