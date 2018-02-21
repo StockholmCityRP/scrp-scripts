@@ -26,7 +26,7 @@ end)
 Citizen.CreateThread(function()
  	while true do
  		Citizen.Wait(100)
- 		if ( IsControlPressed(2, 246) ) then
+ 		if ( IsControlPressed(2, 246) and GetLastInputMethod(2) ) then
  			TriggerEvent("Ragdoll", source)
  		end
  	end
