@@ -41,5 +41,5 @@ client_scripts {
 	"client/gpstools-client.lua",
 	"client/commands-client.lua",
 	"client/ooc-client.lua"
-	"client/ragdoll-client.lua"
+	"client/ragdoll-client.lua",
 }
