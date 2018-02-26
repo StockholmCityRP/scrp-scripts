@@ -12,5 +12,5 @@ end)
 
 RegisterNetEvent('commands:getid')
 AddEventHandler('commands:getid', function(source)
-	ESX.ShowNotification(_U('commands_getid') .. " ~y~" .. GetPlayerServerId(source))
+	ESX.ShowNotification(_U('commands_getid') .. " ~y~" .. GetPlayerFromServerId(source))
 end)

@@ -6,14 +6,12 @@ description 'An series of scripts'
 
 version '1.0.0'
 
--- server scripts
 server_scripts {
 	"@mysql-async/lib/MySQL.lua",
 	"@es_extended/locale.lua",
 	"locates/en.lua",
 	"locates/sv.lua",
 	"config.lua",
-	"server/deletepoliceweapons-server.lua",
 	"server/deletevehicle-server.lua",
 	"server/ooc-server.lua",
 	"server/afkkick-server.lua",
@@ -23,7 +21,6 @@ server_scripts {
 	--"server/restart_alert-server.lua"
 }
 
--- client scripts
 client_scripts {
 	"@es_extended/locale.lua",
 	"locates/en.lua",
@@ -40,6 +37,7 @@ client_scripts {
 	"client/handsup-client.lua",
 	"client/gpstools-client.lua",
 	"client/commands-client.lua",
-	"client/ooc-client.lua"
+	"client/ooc-client.lua",
 	"client/ragdoll-client.lua",
+	"client/disable_dispatch-client.lua"
 }
