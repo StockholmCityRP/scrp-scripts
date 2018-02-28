@@ -12,7 +12,6 @@ server_scripts {
 	"locates/en.lua",
 	"locates/sv.lua",
 	"config.lua",
-	"server/deletevehicle-server.lua",
 	"server/ooc-server.lua",
 	"server/afkkick-server.lua",
 	"server/discordbot_server.lua",
@@ -28,9 +27,7 @@ client_scripts {
 	"config.lua",
 	"client/fixtraffic-client.lua",
 	"client/NoNPCDrop-client.lua",
-	"client/deletepoliceweapons-client.lua",
 	"client/pointfinger-client.lua",
-	"client/deletevehicle-client.lua",
 	"client/speed_limit-client.lua",
 	"client/NoDriveBy-client.lua",
 	"client/afkkick-client.lua",
@@ -39,5 +36,6 @@ client_scripts {
 	"client/commands-client.lua",
 	"client/ooc-client.lua",
 	"client/ragdoll-client.lua",
+	"client/no_vehicle_rewards-client.lua"
 	"client/disable_dispatch-client.lua"
 }

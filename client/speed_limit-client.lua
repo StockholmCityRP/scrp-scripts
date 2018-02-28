@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
 	local resetSpeedOnEnter = true
 	local enabled = false
 	while true do
-		Citizen.Wait(0)
+		Citizen.Wait(10)
 		local playerPed = GetPlayerPed(-1)
 		local vehicle = GetVehiclePedIsIn(playerPed, false)
 
