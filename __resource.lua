@@ -30,6 +30,7 @@ client_scripts {
 	"client/pointfinger-client.lua",
 	"client/speed_limit-client.lua",
 	"client/NoDriveBy-client.lua",
+	"client/idhead_client.lua",
 	"client/afkkick-client.lua",
 	"client/handsup-client.lua",
 	"client/gpstools-client.lua",
