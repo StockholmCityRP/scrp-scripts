@@ -1,6 +1,6 @@
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(100)
+        Citizen.Wait(10)
         DisablePlayerVehicleRewards(PlayerId())
     end
 end)
