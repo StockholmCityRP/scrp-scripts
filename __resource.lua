@@ -39,5 +39,6 @@ client_scripts {
 	"client/ragdoll-client.lua",
 	"client/no_vehicle_rewards-client.lua",
 	"client/disable_dispatch-client.lua",
-	"client/street_display-client.lua"
+	"client/street_display-client.lua",
+	"client/disable_npc_car-client.lua"
 }
