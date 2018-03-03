@@ -10,7 +10,7 @@ Locales['sv'] = {
 	
 	-- speed limiter
 	['speedlimiter_set'] = 'Hastighetsbegränsare inställd på',
-	['speedlimiter_disabled'] = 'Hastighetsbegränsaren har ~y~inaktiveras~w~',
+	['speedlimiter_disabled'] = 'Hastighetsbegränsaren har ~y~inaktiverats~w~',
 	
 	-- commands
 	['commands_getid'] = 'Ditt id är',
