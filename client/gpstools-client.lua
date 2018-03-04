@@ -2,6 +2,10 @@ local isMinimapEnabled = false
 
 RegisterNetEvent('gpstools:setgps')
 AddEventHandler('gpstools:setgps', function(pos)
+	-- add required decimal or else it wont work
+	pos.x = pos.x + 0.00
+	pos.y = pos.y + 0.00
+	
 	SetNewWaypoint(pos.x, pos.y)
 	showHelpNotification(_U('gpstools_setgps_ok'))
 end)
