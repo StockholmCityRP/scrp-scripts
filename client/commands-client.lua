@@ -9,8 +9,3 @@ RegisterNetEvent('commands:lookup')
 AddEventHandler('commands:lookup', function(playerName)
 	ESX.ShowNotification(_U('commands_lookup') .. " ~b~" .. playerName)
 end)
-
-RegisterNetEvent('commands:getid')
-AddEventHandler('commands:getid', function(source)
-	ESX.ShowNotification(_U('commands_getid') .. " ~y~" .. GetPlayerFromServerId(source))
-end)
