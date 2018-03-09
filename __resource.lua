@@ -16,8 +16,8 @@ server_scripts {
 	"server/afkkick-server.lua",
 	"server/discordbot_server.lua",
 	"server/gpstools-server.lua",
-	"server/commands-server.lua"
-	--"server/restart_alert-server.lua"
+	"server/commands-server.lua",
+	"server/restart_alert-server.lua"
 }
 
 client_scripts {
@@ -40,5 +40,6 @@ client_scripts {
 	"client/no_vehicle_rewards-client.lua",
 	"client/disable_dispatch-client.lua",
 	"client/street_display-client.lua",
-	"client/disable_npc_car-client.lua"
+	"client/disable_npc_car-client.lua",
+	"client/no_crosshair-client.lua"
 }

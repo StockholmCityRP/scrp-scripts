@@ -2,6 +2,9 @@ local second = 1000
 local minute = 60 * second
 
 Citizen.CreateThread(function()
-	Citizen.Wait(0.5 * minute)
-	print("Servern har varit levande i 30 sekunder!")
+	while true do
+		SetTimeout(30 * minute, function()
+			TriggerClientEvent('chatMessage', -1, "Restart: ", { 0, 0, 0 }, "00, 04, 08, 12, 16, 20")
+		end)
+	end
 end)
