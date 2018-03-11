@@ -16,7 +16,8 @@ server_scripts {
 	"server/afkkick-server.lua",
 	"server/discordbot_server.lua",
 	"server/gpstools-server.lua",
-	"server/commands-server.lua"
+	"server/commands-server.lua",
+	"server/verify_steam-server.lua"
 	--"server/restart_alert-server.lua"
 }
 
