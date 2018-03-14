@@ -19,6 +19,7 @@ server_scripts {
 	"server/commands-server.lua",
 	"server/verify_steam-server.lua"
 	--"server/restart_alert-server.lua"
+	"server/restartalert-server.lua"
 }
 
 client_scripts {
@@ -43,4 +44,5 @@ client_scripts {
 	"client/street_display-client.lua",
 	"client/disable_npc_car-client.lua",
 	"client/no_crosshair-client.lua"
+	"server/restartalert-client.lua"
 }
