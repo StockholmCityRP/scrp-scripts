@@ -18,7 +18,6 @@ Disclaimer: we have not developed all of the scripts in this project.
 - Speed limiter with `B`
 - Discord bot (dumpes chat), set the convar `chat_webhook` in server cfg
 - Server restart alert
-- Verify steam
 
 ### Requirements
 - ES
