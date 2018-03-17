@@ -15,9 +15,9 @@ Locales['sv'] = {
 	-- commands
 	['commands_getid'] = 'Ditt id är',
 	['commands_lookup'] = 'Det är',
-	-- restart alert
-	['restartalert_message'] = 'The server runs an auto restart solution which will restart the server every four hours from 00:00 GMT +01:00 (Swedish time)',
-	['restartalert_alert1'] = 'The server has been up for ',
-	['restartalert_alert2'] = ' timma(r), nästa omstart kommer begå om ',
-	['restartalert_alert3'] = ' timma(r)'
+	
+	-- drift
+	['drift'] = 'drift',
+	['drift_disabled'] = '~r~påslaget',
+	['drift_enabled'] = '~g~avstängt',
 }

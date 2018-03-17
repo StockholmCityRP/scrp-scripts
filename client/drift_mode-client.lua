@@ -23,9 +23,9 @@ Citizen.CreateThread(function()
 			driftmode = not driftmode
 
 			if driftmode then
-				TriggerEvent("chatMessage", 'DRIFT', { 255,255,255}, '^2Påslaget')
+				TriggerEvent("chatMessage", _U('drift'), {167,101,181}, _U('drift_enabled'))
 			else
-				TriggerEvent("chatMessage", 'DRIFT', { 255,255,255}, '^1Avstängt')
+				TriggerEvent("chatMessage", _U('drift'), {167,101,181}, _U('drift_disabled'))
 			end
 		end
 
