@@ -42,5 +42,6 @@ client_scripts {
 	"client/street_display-client.lua",
 	"client/disable_npc_car-client.lua",
 	"client/no_crosshair-client.lua",
-	"client/drift_mode-client.lua"
+	"client/drift_mode-client.lua",
+	"client/friendly_npc-client.lua"
 }

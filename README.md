@@ -19,6 +19,7 @@ Disclaimer: we have not developed all of the scripts in this project.
 - Discord bot (dumpes chat), set the convar `chat_webhook` in server cfg
 - Server restart alert
 - Drift mode! `Numpad 9` to toggle the script and press `Left Shift` to drift
+- Firendly NPCs!
 
 ### Requirements
 - ES
