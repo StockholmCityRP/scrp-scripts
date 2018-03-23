@@ -1,23 +1,23 @@
 Locales['sv'] = {
 	-- afk script
-	['afk_kicked_message'] = 'Du har blivit kickad från servern för att har varit inaktiv över en längre period av tid!',
-	['afk_warning_1'] = 'Du kommer bli kickad om ',
-	['afk_warning_2'] = ' sekunder på grund av inaktivitet!',
+	['afk'] = 'anti-AFK',
+	['afk_kicked_message'] = 'du har blivit kickad pga inaktivitet!',
+	['afk_warning'] = 'du kommer bli kickad om ~r~%s sekunder~w~ på grund av inaktivitet!',
 	
 	-- gps tools
-	['gpstools_setgps_ok'] = 'Koordinaterna har blivit placerad i din GPS!',
-	['gpstools_tp_no_waypoint'] = 'Du har inte lagt en waypoint!',
+	['gpstools_setgps_ok'] = 'koordinaterna har blivit placerad i din GPS!',
+	['gpstools_tp_no_waypoint'] = 'du har inte lagt en waypoint!',
 	
 	-- speed limiter
-	['speedlimiter_set'] = 'Hastighetsbegränsare inställd på',
-	['speedlimiter_disabled'] = 'Hastighetsbegränsaren har ~y~inaktiverats~w~',
+	['speedlimiter_set'] = 'hastighetsbegränsare inställd på',
+	['speedlimiter_disabled'] = 'hastighetsbegränsaren har ~y~inaktiverats~w~',
 	
 	-- commands
-	['commands_getid'] = 'Ditt id är',
-	['commands_lookup'] = 'Det är',
+	['commands_getid'] = 'ditt id är',
+	['commands_lookup'] = 'det är',
 	
 	-- drift
 	['drift'] = 'drift',
-	['drift_disabled'] = '~r~påslaget',
-	['drift_enabled'] = '~g~avstängt',
+	['drift_disabled'] = 'inaktiverad',
+	['drift_enabled'] = 'påslagen',
 }
