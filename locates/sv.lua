@@ -1,3 +1,5 @@
+
+
 Locales['sv'] = {
 	-- ooc chat
 	['ooc_help'] = 'skicka ett meddelande som inte kopplat till din karaktär',
@@ -17,7 +19,7 @@ Locales['sv'] = {
 	['gpstools_tp_no_waypoint'] = 'du har inte lagt en waypoint!',
 	
 	-- speed limiter
-	['speedlimiter_set'] = 'hastighetsbegränsare inställd på',
+	['speedlimiter_set'] = 'hastighetsbegränsare inställd på ~b~%s~w~ km/h',
 	['speedlimiter_disabled'] = 'hastighetsbegränsaren har ~y~inaktiverats~w~',
 	
 	-- commands

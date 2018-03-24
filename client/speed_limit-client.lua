@@ -33,11 +33,11 @@ Citizen.CreateThread(function()
 				enabled = false
 			end
 			if IsControlJustReleased(0, Keys['B']) and GetLastInputMethod(2) then
-				if not enabled then -- fix spam
+				if not enabled then
 					cruise = GetEntitySpeed(vehicle)
 					SetEntityMaxSpeed(vehicle, cruise)
 					cruise = math.floor(cruise * 3.6 + 0.5)
-					showHelpNotification(_U('speedlimiter_set') .. " ~b~"..cruise.."~w~ km/h")
+					showHelpNotification(_U('speedlimiter_set', cruise))
 					enabled = true
 				else
 					showHelpNotification(_U('speedlimiter_disabled'))
