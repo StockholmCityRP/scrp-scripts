@@ -1,4 +1,12 @@
 Locales['sv'] = {
+	-- ooc chat
+	['ooc_help'] = 'skicka ett meddelande som inte kopplat till din karaktär',
+	['twt_help'] = 'skicka en tweet',
+	['me_help'] = 'skriv en händelse, t.ex \'visar körkort\'',
+	['news_help'] = 'meddela en nyhet (missbruka inte)',
+	['ooc_argument_name'] = 'meddelande',
+	['ooc_argument_help'] = 'det meddelandet du vill skicka',
+	
 	-- afk script
 	['afk'] = 'anti-AFK',
 	['afk_kicked_message'] = 'du har blivit kickad pga inaktivitet!',

@@ -1,4 +1,12 @@
 Locales['en'] = {
+	-- ooc chat
+	['ooc_help'] = 'type an out of character message',
+	['twt_help'] = 'send a tweet',
+	['me_help'] = 'personal action',
+	['news_help'] = 'announce news (do not abuse)',
+	['ooc_argument_name'] = 'message',
+	['ooc_argument_help'] = 'the message',
+	
 	-- afk script
 	['afk'] = 'anti-AFK',
 	['afk_kicked_message'] = 'you have been kicked for being AFK',
