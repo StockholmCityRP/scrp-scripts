@@ -1,5 +1,5 @@
 
-local driftmode = true -- on/off speed
+local driftmode = false -- on/off speed
 local drift_speed_limit = 100.0
 
 local Keys = {
