@@ -1,8 +1,13 @@
 -- Modified version from Scammer's id over head + blip
 
 Citizen.CreateThread(function()
+
+	-- Wait just a bit so that everything can load
+	Citizen.Wait(10000)
+	
 	local sourcePed = GetPlayerPed(-1)
 	local targetPed
+	local headId
 	
 	while true do
 	
@@ -11,7 +16,7 @@ Citizen.CreateThread(function()
 			targetPed = GetPlayerPed(id)
 			
 			-- Is the player connected and not the same as the source?
-			if NetworkIsPlayerActive(id) and targetPed ~= GetPlayerPed(-1) then
+			if NetworkIsPlayerActive(id) and targetPed ~= GetPlayerPed(-1) and GetPlayerName(id) ~= nil then
 				
 				-- Is the source near the target, and is there a clear view? (so that people cannot see IDs through walls etc)
 				if (GetDistanceBetweenCoords(GetEntityCoords(sourcePed), GetEntityCoords(targetPed)) < 15.0001) and HasEntityClearLosToEntity(sourcePed, targetPed, 17) then
