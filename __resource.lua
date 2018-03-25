@@ -17,8 +17,8 @@ server_scripts {
 	"server/discordbot_server.lua",
 	"server/gpstools-server.lua",
 	"server/commands-server.lua",
-	"server/restart_alert-server.lua",
-	"server/check_name-server.lua"
+	"server/restart_alert-server.lua"
+	--"server/check_name-server.lua"
 }
 
 client_scripts {
