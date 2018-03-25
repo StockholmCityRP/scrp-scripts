@@ -20,6 +20,10 @@ Disclaimer: we have not developed all of the scripts in this project.
 - Server restart alert
 - Drift mode! `Numpad 9` to toggle the script and press `Left Shift` to drift
 - Firendly NPCs!
+- Many checks for the player name
+	- checks if the first and surname starts with a capital letter
+	- checks for special characters
+	- checks for short / long names
 
 ### Requirements
 - ES
