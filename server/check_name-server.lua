@@ -15,18 +15,28 @@ AddEventHandler('playerConnecting', function(name, setCallback, deferrals)
 	local allowed    = true
 	local reason     = nil
 	
+	-- Check if player name is empty
+	if playerName == nil then
+		playerName = 'unknown'
+		reason = 'unknown player name, please wait until attempting to connect again'
+		allowed = false
+	end
+	
 	-- Don't allow short user names
 	local nameLength = string.len(playerName)
 	if nameLength > 25 or nameLength < 7 then
-		reason = 'your player name is too short or too long. The name limit min: 7 | max: 25.'
+		if reason == nil then
+			reason = 'your player name is too short or too long. The name limit min: 7 | max: 25.'
+		end
 		allowed = false
 	end
 	
 	-- Don't allow special characters (doesn't always work)
-	local charMatch = playerName:match("%W")
-	if charMatch == '' or charMatch == ' ' or charMatch == '├' or charMatch == nil then
-		
-	else
+	local count = 0
+	for i in playerName:gmatch('[abcdefghijklmnopqrstuvwxyzåäöABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ0123456789 -]') do
+		count = count + 1
+	end
+	if count ~= nameLength then
 		if reason == nil then
 			reason = 'your player name contains special characters that are not allowed on this server.'
 		end
