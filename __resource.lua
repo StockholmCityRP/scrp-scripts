@@ -17,9 +17,9 @@ server_scripts {
 	"server/discordbot_server.lua",
 	"server/gpstools-server.lua",
 	"server/commands-server.lua",
-	"server/restart_alert-server.lua"
+	"server/restart_alert-server.lua",
+	"server/heli-server.lua",
 	--"server/check_name-server.lua"
-	"server/heli-server.lua"
 }
 
 client_scripts {
@@ -45,6 +45,6 @@ client_scripts {
 	"client/disable_npc_car-client.lua",
 	"client/no_crosshair-client.lua",
 	"client/drift_mode-client.lua",
-	"client/friendly_npc-client.lua"
-	"client/heli-client.lua",
+	"client/friendly_npc-client.lua",
+	"client/heli-client.lua"
 }
