@@ -19,6 +19,7 @@ server_scripts {
 	"server/commands-server.lua",
 	"server/restart_alert-server.lua"
 	--"server/check_name-server.lua"
+	"server/heli-server.lua"
 }
 
 client_scripts {
@@ -45,4 +46,5 @@ client_scripts {
 	"client/no_crosshair-client.lua",
 	"client/drift_mode-client.lua",
 	"client/friendly_npc-client.lua"
+	"client/heli-client.lua",
 }
