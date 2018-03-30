@@ -29,12 +29,20 @@ AddEventHandler('gpstools:togglegps', function()
 end)
 
 RegisterNetEvent('gpstools:tpwaypoint')
-AddEventHandler('gpstools:tpwaypoint', function()
+AddEventHandler('gpstools:tpwaypoint', function(yCompensate)
 	local playerPed = GetPlayerPed(-1)
 	local WaypointHandle = GetFirstBlipInfoId(8)
+	
+	if yCompensate == nil or tonumber(yCompensate) == nil then
+		yCompensate = 0.01
+	else
+		-- Ensure that we are using a float value
+		yCompensate = yCompensate + 0.01
+	end
+	
 	if DoesBlipExist(WaypointHandle) then
 		local coord = Citizen.InvokeNative(0xFA7C7F0AADF25D09, WaypointHandle, Citizen.ResultAsVector())
-		SetEntityCoords(playerPed, coord.x, coord.y, coord.z)
+		SetEntityCoords(playerPed, coord.x, coord.y, coord.z + yCompensate)
 	else
 		showHelpNotification(_U('gpstools_tp_no_waypoint'))
 	end

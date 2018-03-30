@@ -22,8 +22,8 @@ end, function(source, args, user)
 end, {help = "Toggle the big gps"})
 
 TriggerEvent('es:addGroupCommand', 'tpwaypoint', 'admin', function(source, args, user)
-	TriggerClientEvent("gpstools:tpwaypoint", source)
+	TriggerClientEvent("gpstools:tpwaypoint", source, args[1])
 
 end, function(source, args, user)
 	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficient Permissions.")
-end, {help = "TP to the waypoint selected on GPS"})
+end, {help = "TP to the way-point selected on GPS", params = {{name = "y compensation", help = "compensate the Y coords so that you don't fall through the world until the game realizes it and puts you back."}}})
