@@ -18,20 +18,20 @@ local Keys = {
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(10)
-		if IsControlJustPressed(1, Keys['N9']) then
+		if IsControlJustPressed(1, Keys['N9']) and GetLastInputMethod(2) then
 
 			driftmode = not driftmode
 
 			if driftmode then
-				TriggerEvent("chatMessage", _U('drift'), {167,101,181}, _U('drift_enabled'))
+				TriggerEvent('chatMessage', _U('drift'), {167,101,181}, _U('drift_enabled'))
 			else
-				TriggerEvent("chatMessage", _U('drift'), {167,101,181}, _U('drift_disabled'))
+				TriggerEvent('chatMessage', _U('drift'), {167,101,181}, _U('drift_disabled'))
 			end
 		end
 
 		if driftmode then
-			if IsPedInAnyVehicle(GetPed(), false) then
-				if GetPedInVehicleSeat(GetCar(), -1) == GetPed() then
+			if IsPedInAnyVehicle(GetPlayerPed(-1), false) then
+				if GetPedInVehicleSeat(GetCar(), -1) == GetPlayerPed(-1) then
 					if GetEntitySpeed(GetCar()) * 3.6 <= drift_speed_limit then
 						if IsControlPressed(1, Keys['LEFTSHIFT']) then
 							SetVehicleReduceGrip(GetCar(), true)
@@ -45,7 +45,4 @@ Citizen.CreateThread(function()
 	end
 end)
 
-
--- Function
-function GetPed() return GetPlayerPed(-1) end
-function GetCar() return GetVehiclePedIsIn(GetPed(),false) end
+function GetCar() return GetVehiclePedIsIn(GetPlayerPed(-1), false) end

@@ -56,4 +56,4 @@ function showHelpNotification(text)
 	BeginTextCommandDisplayHelp("STRING")
 	AddTextComponentSubstringPlayerName(text)
 	EndTextCommandDisplayHelp(0, 0, 1, -1)
-end 
+end

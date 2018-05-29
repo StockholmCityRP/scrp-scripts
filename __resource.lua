@@ -12,12 +12,11 @@ server_scripts {
 	"locates/en.lua",
 	"locates/sv.lua",
 	"config.lua",
-	"server/ooc-server.lua",
 	"server/afkkick-server.lua",
 	"server/discordbot_server.lua",
 	"server/gpstools-server.lua",
-	"server/commands-server.lua",
-	"server/restart_alert-server.lua"
+	"server/commands-server.lua"
+	--"server/restart_alert-server.lua"
 	--"server/check_name-server.lua"
 }
 
@@ -36,13 +35,12 @@ client_scripts {
 	"client/handsup-client.lua",
 	"client/gpstools-client.lua",
 	"client/commands-client.lua",
-	"client/ooc-client.lua",
-	"client/ragdoll-client.lua",
 	"client/no_vehicle_rewards-client.lua",
 	"client/disable_dispatch-client.lua",
 	"client/street_display-client.lua",
 	"client/disable_npc_car-client.lua",
 	"client/no_crosshair-client.lua",
 	"client/drift_mode-client.lua",
-	"client/friendly_npc-client.lua"
+	"client/friendly_npc-client.lua",
+	"client/discord_rich_presence-client.lua"
 }
