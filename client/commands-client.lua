@@ -7,7 +7,7 @@ end)
 
 RegisterNetEvent('commands:lookup')
 AddEventHandler('commands:lookup', function(playerName)
-	ESX.ShowNotification(_U('commands_lookup') .. " ~b~" .. playerName)
+	ESX.ShowNotification(_U('commands_lookup', playerName))
 end)
 
 RegisterNetEvent('commands:addy')
