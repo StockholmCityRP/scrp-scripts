@@ -29,20 +29,22 @@ AddEventHandler('gpstools:togglegps', function()
 end)
 
 RegisterNetEvent('gpstools:tpwaypoint')
-AddEventHandler('gpstools:tpwaypoint', function(yCompensate)
+AddEventHandler('gpstools:tpwaypoint', function()
 	local playerPed = GetPlayerPed(-1)
-	local WaypointHandle = GetFirstBlipInfoId(8)
-	
-	if yCompensate == nil or tonumber(yCompensate) == nil then
-		yCompensate = 0.01
-	else
-		-- Ensure that we are using a float value
-		yCompensate = yCompensate + 0.01
-	end
-	
-	if DoesBlipExist(WaypointHandle) then
-		local coord = Citizen.InvokeNative(0xFA7C7F0AADF25D09, WaypointHandle, Citizen.ResultAsVector())
-		SetEntityCoords(playerPed, coord.x, coord.y, coord.z + yCompensate)
+	local blip = GetFirstBlipInfoId(8)
+
+	if DoesBlipExist(blip) then
+		--local coord = Citizen.InvokeNative(0xFA7C7F0AADF25D09, blip, Citizen.ResultAsVector())
+		local coord = GetBlipInfoIdCoord(blip)
+		SetEntityCoords(playerPed, coord.x, coord.y, coord.z)
+		ClearPedTasksImmediately(playerPed)
+		SetEntityCoords(playerPed, coord.x, coord.y, coord.z)
+
+		RequestCollisionAtCoord(coord.x, coord.y, coord.z)
+		while not HasCollisionLoadedAroundEntity(playerPed) do
+			Citizen.Wait(0)
+			RequestCollisionAtCoord(coord.x, coord.y, coord.z)
+		end
 	else
 		showHelpNotification(_U('gpstools_tp_no_waypoint'))
 	end

@@ -25,4 +25,7 @@ Locales['sv'] = {
 	['message_left_reason'] = '~y~%s~s~ lämnade servern (%s)',
 	['message_left'] = '~y~%s~s~ lämnade servern',
 	['message_joined'] = '~y~%s~s~ anslöt',
+
+	-- no drive-by
+	['nodrive_action_disabled'] = 'drive-bys är förbjudna på denna server.',
 }

@@ -25,4 +25,7 @@ Locales['en'] = {
 	['message_left_reason'] = '~y~%s~s~ left (%s)',
 	['message_left'] = '~y~%s~s~ left',
 	['message_joined'] = '~y~%s~s~ joined',
+
+	-- no drive-by
+	['nodrive_action_disabled'] = 'drive-bys are not allowed on this server.',
 }

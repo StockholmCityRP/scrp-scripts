@@ -1,17 +1,14 @@
-# fivem-scripts
+# scrp-scripts
 Disclaimer: we have not developed all of the scripts in this project.
 
 ### Features
 - AFK kick
-- Id over head
 - Commands (`/lookup`, etc)
 - Disable emergency dispatch
-- Lock all npc cars
 - No crosshair
 - No vehicle rewards (in cop cars)
 - Walkable hands up
 - No NPC drops (guns)
-- OOC chat (`/ooc`, `/news`, `/twt`, `/news`)
 - Point finger with `B`
 - Ragdoll with `Y`
 - Street name
@@ -26,6 +23,4 @@ Disclaimer: we have not developed all of the scripts in this project.
 	- checks for short / long names
 
 ### Requirements
-- ES
 - ESX
-- MySQL Async
