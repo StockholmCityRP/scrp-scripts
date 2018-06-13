@@ -1,16 +1,24 @@
-local secondsUntilKick = 1200 -- AFK kick time limit in seconds
-local kickWarning = true      -- Warn players if 3/4 of the Time Limit ran up
+local afkTimeout = 1200 -- AFK kick time limit in seconds
 local timer = 0
+
+local currentPosition  = nil
+local previousPosition = nil
+local currentHeading   = nil
+local previousHeading  = nil
+
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1000)
+
 		playerPed = GetPlayerPed(-1)
 		if playerPed then
-			currentPos = GetEntityCoords(playerPed, true)
-			if currentPos == prevPos then
+			currentPosition = GetEntityCoords(playerPed, true)
+			currentHeading  = GetEntityHeading(playerPed)
+
+			if currentPosition == previousPosition and currentHeading == previousHeading then
 				if timer > 0 then
-					if kickWarning and timer == math.ceil(secondsUntilKick / 4) then
-						TriggerEvent("chatMessage", _U('afk'), {169, 208, 214}, _U('afk_warning', timer))
+					if timer == math.ceil(afkTimeout / 4) then
+						TriggerEvent('chat:addMessage', { args = { _U('afk'), _U('afk_warning', timer) } })
 					end
 
 					timer = timer - 1
@@ -18,9 +26,12 @@ Citizen.CreateThread(function()
 					TriggerServerEvent('afkkick:kickplayer')
 				end
 			else
-				timer = secondsUntilKick
+				timer = afkTimeout
 			end
-			prevPos = currentPos
+
+			-- (always) update variables
+			previousPosition = currentPosition
+			previousHeading  = currentHeading
 		end
 	end
 end)
