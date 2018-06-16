@@ -9,8 +9,9 @@ local Keys = {
 	["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
-local car = nil
+
 ESX = nil
+local isInVehicle = false
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -21,12 +22,16 @@ end)
 
 Citizen.CreateThread(function()
 	local playerPed = GetPlayerPed(-1)
+	local vehicle = nil
 	while true do
 		Citizen.Wait(1000)
 
-		car = GetVehiclePedIsIn(playerPed, false)
-		if car then
-			SetPlayerCanDoDriveBy(PlayerId(), false)
+		vehicle = GetVehiclePedIsIn(playerPed, false)
+		
+		if DoesEntityExist(vehicle) then
+			isInVehicle = true
+		else
+			isInVehicle = false
 		end
 	end
 end)
@@ -35,8 +40,10 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(10)
 
-		if car then
+		if isInVehicle then
+			SetPlayerCanDoDriveBy(PlayerId(), false)
 			DisableControlAction(2, Keys['TAB'], true)
+			HideHudComponentThisFrame(19) -- Weapon Wheel
 
 			if IsDisabledControlJustReleased(0, Keys['TAB']) then
 				ESX.ShowNotification(_U('nodrive_action_disabled'))
