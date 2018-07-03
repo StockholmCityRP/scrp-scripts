@@ -12,6 +12,7 @@ local Keys = {
 
 ESX = nil
 local isInVehicle = false
+local hasShownMessage = false
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -44,12 +45,20 @@ Citizen.CreateThread(function()
 			SetPlayerCanDoDriveBy(PlayerId(), false)
 			DisableControlAction(2, Keys['TAB'], true)
 			HideHudComponentThisFrame(19) -- Weapon Wheel
+			DisplayAmmoThisFrame(false)
 
 			if IsDisabledControlJustReleased(0, Keys['TAB']) then
-				ESX.ShowNotification(_U('nodrive_action_disabled'))
+				ShowNotice()
 			end
 		else
 			Citizen.Wait(2000)
 		end
 	end
 end)
+
+function ShowNotice()
+	if not hasShownMessage then
+		ESX.ShowNotification(_U('nodrive_action_disabled'))
+	end
+	hasShownMessage = true
+end
