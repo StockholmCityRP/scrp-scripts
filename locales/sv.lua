@@ -2,7 +2,7 @@ Locales['sv'] = {
 	-- afk script
 	['afk'] = '^2Anti-AFK',
 	['afk_kicked_message'] = 'du har blivit kickad på grund av inaktivitet!',
-	['afk_warning'] = 'du kommer bli kickad om ~r~%s sekunder~s~ på grund av inaktivitet!',
+	['afk_warning'] = 'du kommer bli kickad om ^3%s sekunder^0 på grund av inaktivitet!',
 
 	-- gps tools
 	['gpstools_setgps_ok'] = 'koordinaterna har blivit placerad i din GPS!',

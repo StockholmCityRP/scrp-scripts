@@ -20,8 +20,19 @@ end)
 
 RegisterNetEvent('gpstools:getpos')
 AddEventHandler('gpstools:getpos', function()
-	local pos = GetEntityCoords(GetPlayerPed(-1))
-	local formattedText = "x: " .. pos.x .. ", y: " .. pos.y .. ", z: " .. pos.z
+	local playerPed = PlayerPedId()
+
+	local pos      = GetEntityCoords(playerPed)
+	local heading  = GetEntityHeading(playerPed)
+	local finalPos = {}
+
+	-- round to 2 decimals
+	finalPos.x = string.format("%.2f", pos.x)
+	finalPos.y = string.format("%.2f", pos.y)
+	finalPos.z = string.format("%.2f", pos.z)
+	finalPos.h = string.format("%.2f", heading)
+
+	local formattedText = "x = " .. finalPos.x .. ", y = " .. finalPos.y .. ", z = " .. finalPos.z .. ', h = ' .. finalPos.h
 	TriggerEvent('chatMessage', 'SYSTEM', { 0, 0, 0 }, formattedText)
 end)
 
