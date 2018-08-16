@@ -27,7 +27,7 @@ client_scripts {
 	'locales/sv.lua',
 	'config.lua',
 	'client/fixtraffic-client.lua',
-	'client/NoNPCDrop-client.lua',
+	'client/npc_drop-client.lua',
 	'client/pointfinger-client.lua',
 	'client/speed_limit-client.lua',
 	'client/no_drive_by-client.lua',

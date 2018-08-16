@@ -22,6 +22,8 @@ Citizen.CreateThread(function()
 		local street1, street2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z, Citizen.ResultAsInteger(), Citizen.ResultAsInteger())
 		local currentZone = zones[GetNameOfZone(pos.x, pos.y, pos.z)]
 
+		drawTxt(0.3, 1.4, 0.45, '~s~ID: ~y~' .. GetPlayerServerId(PlayerId()), 185, 185, 185, 255)
+
 		if(GetStreetNameFromHashKey(street1) and GetNameOfZone(pos.x, pos.y, pos.z))then
 			if(zones[GetNameOfZone(pos.x, pos.y, pos.z)] and tostring(GetStreetNameFromHashKey(street1)))then
 				if tostring(GetStreetNameFromHashKey(street2)) == "" then
