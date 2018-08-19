@@ -22,18 +22,10 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-	local playerPed = GetPlayerPed(-1)
-	local vehicle = nil
 	while true do
 		Citizen.Wait(1000)
 
-		vehicle = GetVehiclePedIsIn(playerPed, false)
-		
-		if DoesEntityExist(vehicle) then
-			isInVehicle = true
-		else
-			isInVehicle = false
-		end
+		isInVehicle = IsPedInAnyVehicle(PlayerPedId(), true)
 	end
 end)
 
@@ -59,6 +51,6 @@ end)
 function ShowNotice()
 	if not hasShownMessage then
 		ESX.ShowNotification(_U('nodrive_action_disabled'))
+		hasShownMessage = true
 	end
-	hasShownMessage = true
 end

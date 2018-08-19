@@ -15,6 +15,12 @@ local relationshipTypes = {
 	'AMBIENT_GANG_WEICHENG',
 	'AMBIENT_GANG_HILLBILLY',
 	'DEALER',
+	'COP',
+	'PRIVATE_SECURITY',
+	'SECURITY_GUARD',
+	'ARMY',
+	'MEDIC',
+	'FIREMAN',
 	'HATES_PLAYER',
 	'NO_RELATIONSHIP',
 	'SPECIAL',
@@ -30,8 +36,9 @@ local relationshipTypes = {
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(5000)
+
 		for _, group in ipairs(relationshipTypes) do
-			SetRelationshipBetweenGroups(1, GetHashKey('PLAYER'), GetHashKey(group))
+			SetRelationshipBetweenGroups(1, GetHashKey('PLAYER'), GetHashKey(group)) -- could be removed
 			SetRelationshipBetweenGroups(1, GetHashKey(group), GetHashKey('PLAYER'))
 		end
 	end

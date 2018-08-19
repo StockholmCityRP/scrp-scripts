@@ -10,7 +10,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1000)
 
-		playerPed = GetPlayerPed(-1)
+		playerPed = PlayerPedId()
 		if playerPed then
 			currentPosition = GetEntityCoords(playerPed, true)
 			currentHeading  = GetEntityHeading(playerPed)
