@@ -7,6 +7,7 @@ Locales['en'] = {
 	-- gps tools
 	['gpstools_setgps_ok'] = 'the coords have been added to your GPS!',
 	['gpstools_tp_no_waypoint'] = 'you do not have a waypoint set!',
+	['gpstools_tp_ground'] = 'the ground (Z axis) could not be found! You\'ve been given a ~y~parachute~s~, good luck!',
 
 	-- speed limiter
 	['speedlimiter_set'] = 'speed limiter set to ~b~%s~s~ km/h',

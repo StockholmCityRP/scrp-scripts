@@ -15,7 +15,7 @@ AddEventHandler('gpstools:setgps', function(pos)
 	pos.y = pos.y + 0.00
 
 	SetNewWaypoint(pos.x, pos.y)
-	showHelpNotification(_U('gpstools_setgps_ok'))
+	ESX.ShowHelpNotification(_U('gpstools_setgps_ok'))
 end)
 
 RegisterNetEvent('gpstools:getpos')
@@ -77,6 +77,7 @@ AddEventHandler('gpstools:tpwaypoint', function()
 		if not groundFound then
 			coordZ = 100
 			TriggerEvent('esx:addWeapon', 'GADGET_PARACHUTE', 0)
+			ESX.ShowHelpNotification(_U('gpstools_tp_ground'))
 		end
 
 		ESX.Game.Teleport(playerPed, {
@@ -85,12 +86,6 @@ AddEventHandler('gpstools:tpwaypoint', function()
 			z = coordZ
 		})
 	else
-		showHelpNotification(_U('gpstools_tp_no_waypoint'))
+		ESX.ShowHelpNotification(_U('gpstools_tp_no_waypoint'))
 	end
 end)
-
-function showHelpNotification(text)
-	BeginTextCommandDisplayHelp("STRING")
-	AddTextComponentSubstringPlayerName(text)
-	EndTextCommandDisplayHelp(0, 0, 1, -1)
-end
